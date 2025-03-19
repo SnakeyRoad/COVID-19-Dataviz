@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization - COVID-19 Analysis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- D3.js library via CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Include D3 Geo projection library for maps -->
+    <script src="https://d3js.org/d3-geo-projection.v4.min.js"></script>
+    <!-- Add favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☣️</text></svg>">
+</head>
+<body>
+    <header>
+        <h1>COVID-19 Global Impact Analysis</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="visualization.html" class="active">Data Visualization</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="visualization-page">
+        <h2>Interactive COVID-19 Data Visualization</h2>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="visualization-type">Choose Visualization:</label>
+                <select id="visualization-type">
+                    <option value="world-map">World Map (Cases by Country)</option>
+                    <option value="healthcare-scatter">Healthcare Resources vs. COVID Impact</option>
+                    <option value="age-analysis">Age Demographics Analysis</option>
+                    <option value="time-series">Cases Time Series</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="metric-select">Choose Metric:</label>
+                <select id="metric-select">
+                    <option value="cases">Confirmed Cases</option>
+                    <option value="deaths">Deaths</option>
+                </select>
+            </div>
+            
+            <div class="control-group filter-controls">
+                <label for="continent-filter">Filter by Continent:</label>
+                <select id="continent-filter">
+                    <option value="all">All Continents</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Europe">Europe</option>
+                    <option value="North America">North America</option>
+                    <option value="South America">South America</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="viz-wrapper" class="viz-wrapper">
+            <div class="data-insights" id="data-insights-container">
+                <h3>Key Insights</h3>
+                <div id="insights-content">
+                    <p>Select a visualization type to see key insights.</p>
+                </div>
+            </div>
+            
+            <div class="visualization-container">
+                <div id="visualization"></div>
+                <div id="tooltip" class="tooltip"></div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 COVID-19 Data Visualization Project</p>
+        <p>Developed by: <a href="https://github.com/SnakeyRoad"><span style="color: #888;">Christian Mol 2406930</span></a></p>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/visualization.js"></script>
+</body>
+</html>
